@@ -2,22 +2,17 @@ from typing import List
 
 from m5.objects import (
     AddrRange,
-    BaseCPU,
-    BaseMMU,
     IOXBar,
     Port,
-    Process,
 )
 from gem5.components.boards.abstract_system_board import AbstractSystemBoard
 from gem5.components.boards.se_binary_workload import SEBinaryWorkload
-from gem5.components.memory import SingleChannelDDR4_2400
-from gem5.components.processors.base_cpu_core import BaseCPUCore
-from gem5.components.processors.base_cpu_processor import BaseCPUProcessor
 from gem5.isas import ISA
 from gem5.utils.override import overrides
 from gem5.components.processors.abstract_processor import AbstractProcessor
 from gem5.components.memory.abstract_memory_system import AbstractMemorySystem
 from gem5.components.cachehierarchies.abstract_cache_hierarchy import AbstractCacheHierarchy
+from pim import PIM
 from typing import (
     List,
     Optional,
@@ -25,13 +20,13 @@ from typing import (
     Tuple,
 )
 
-class CustomBoard(AbstractSystemBoard, SEBinaryWorkload):
+class PIMBoard(AbstractSystemBoard, SEBinaryWorkload):
     def __init__(
         self,
         clk_freq: str,
         processor: AbstractProcessor,
         memory: AbstractMemorySystem,
-        pim: AbstractMemorySystem,
+        pim: PIM,
         cache_hierarchy: AbstractCacheHierarchy,
     ) -> None:
         super().__init__(
