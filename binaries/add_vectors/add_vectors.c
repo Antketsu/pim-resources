@@ -67,7 +67,7 @@ int main(){
     printf("Vectores A y B inicializados\n");
 
     uint32_t *crf_start = (uint32_t *)(pim_region + 2); // CRF starts at offset 2 in the PIM region
-    //MOV GRF_A0, BANK0
+    //MOV GRF_A0, BANK1
     printf("Configurando instrucciones CRF...\n");
     crf_start[0] = (3 << 28) | (1 << 25) | (3 << 22) | (0 << 19) | (0 << 8) |
                    (0 << 4) | (0);

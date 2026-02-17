@@ -49,7 +49,7 @@ def exit_handler():
     process = processor.get_cores()[0].core.workload[0]
     # VA, PA, Size, Cacheable
     process.map(0x10000000, 0xC4000000, 0x1000000, False) # PIM region
-    process.map(0x20000000, 0xD0000000, 0x1000000, False) # Vector A
+    process.map(0x20000000, 0xD0002000, 0x1000000, False) # Vector A in bank1
     process.map(0x30000000, 0xD1000000, 0x1000000, False) # Vector B
     process.map(0x40000000, 0xD2000000, 0x1000000, False) # Vector C
     print("Mapped memory region at VA 0x10000000 to PA 0xC4000000")
@@ -57,9 +57,9 @@ def exit_handler():
     print("Mapped memory region at VA 0x30000000 to PA 0xD1000000")
     print("Mapped memory region at VA 0x40000000 to PA 0xD2000000")
     yield False
+    yield True
 
-#board.set_se_binary_workload(obtain_resource("x86-hello64-static"))
-board.set_se_binary_workload(BinaryResource("/homelocal/antoma19_local/u/tfm/pim-resources/binaries/add_vectors/add_vectors"))
+board.set_se_binary_workload(BinaryResource("/homelocal/antoma19_local/u/tfm/pim-resources/binaries/pim/add_vectors"))
 simulator = Simulator(
     board=board,
     on_exit_event= {
