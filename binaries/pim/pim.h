@@ -1,7 +1,8 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <sys/mman.h>
-
+#include <string.h>
+#include <gem5/m5ops.h>
 typedef struct{
     int16_t *vector;
     int8_t size;

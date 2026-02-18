@@ -49,12 +49,15 @@ def exit_handler():
     process = processor.get_cores()[0].core.workload[0]
     # VA, PA, Size, Cacheable
     process.map(0x10000000, 0xC4000000, 0x1000000, False) # PIM region
-    process.map(0x20000000, 0xD0002000, 0x1000000, False) # Vector A in bank1
-    process.map(0x30000000, 0xD1000000, 0x1000000, False) # Vector B
-    process.map(0x40000000, 0xD2000000, 0x1000000, False) # Vector C
     print("Mapped memory region at VA 0x10000000 to PA 0xC4000000")
+    yield False
+    process.map(0x20000000, 0xD0002000, 0x1000000, False) # Vector A in bank1
     print("Mapped memory region at VA 0x20000000 to PA 0xD0000000")
+    yield False
+    process.map(0x30000000, 0xD1000000, 0x1000000, False) # Vector B
     print("Mapped memory region at VA 0x30000000 to PA 0xD1000000")
+    yield False
+    process.map(0x40000000, 0xD2000000, 0x1000000, False) # Vector C
     print("Mapped memory region at VA 0x40000000 to PA 0xD2000000")
     yield False
     yield True

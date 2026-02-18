@@ -14,8 +14,8 @@ gem5 is copyrighted software; use the --copyright option for details.
 
 gem5 version 25.1.0.0
 gem5 compiled Feb 17 2026 10:31:26
-gem5 started Feb 17 2026 10:40:37
-gem5 executing on artecslab011, pid 539485
+gem5 started Feb 18 2026 09:10:47
+gem5 executing on artecslab011, pid 556765
 command line: ../../../gem5-pim/build/X86/gem5.opt --debug-flags=PIM add_vectors.py
 
 src/sim/syscall_emul.cc:86: warn: ignoring syscall set_robust_list(...)
@@ -27,280 +27,656 @@ src/sim/syscall_emul.cc:86: warn: ignoring syscall mprotect(...)
 Exit event triggered - mapping memory region in the simulated process
 Mapped memory region at VA 0x10000000 to PA 0xC4000000
 Mapped memory region at VA 0x20000000 to PA 0xD0000000
+283657000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002000, pim_mode=0
+283657000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002000
+283658000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002008, pim_mode=0
+283658000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002008
+283659000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002010, pim_mode=0
+283659000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002010
+283660000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002018, pim_mode=0
+283660000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002018
+283668000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002020, pim_mode=0
+283668000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002020
+283669000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002028, pim_mode=0
+283669000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002028
+283671000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002030, pim_mode=0
+283671000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002030
+283672000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002038, pim_mode=0
+283672000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002038
+283681000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002010, pim_mode=0
+283681000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002010
+283682000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002018, pim_mode=0
+283682000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002018
+283683000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002020, pim_mode=0
+283683000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002020
+283684000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002028, pim_mode=0
+283684000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002028
+283686000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002030, pim_mode=0
+283686000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002030
+283687000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002038, pim_mode=0
+283687000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002038
+283688000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002040, pim_mode=0
+283688000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002040
+283689000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002048, pim_mode=0
+283689000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002048
 Mapped memory region at VA 0x30000000 to PA 0xD1000000
+283897000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000000, pim_mode=0
+283897000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000000
+283898000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000008, pim_mode=0
+283898000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000008
+283899000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000010, pim_mode=0
+283899000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000010
+283900000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000018, pim_mode=0
+283900000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000018
+283908000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000020, pim_mode=0
+283908000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000020
+283909000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000028, pim_mode=0
+283909000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000028
+283911000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000030, pim_mode=0
+283911000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000030
+283912000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000038, pim_mode=0
+283912000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000038
+283921000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000010, pim_mode=0
+283921000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000010
+283922000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000018, pim_mode=0
+283922000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000018
+283923000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000020, pim_mode=0
+283923000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000020
+283924000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000028, pim_mode=0
+283924000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000028
+283926000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000030, pim_mode=0
+283926000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000030
+283927000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000038, pim_mode=0
+283927000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000038
+283928000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000040, pim_mode=0
+283928000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000040
+283929000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000048, pim_mode=0
+283929000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000048
 Mapped memory region at VA 0x40000000 to PA 0xD2000000
-283863000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002000, pim_mode=0
-283863000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002000
-283876000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000000, pim_mode=0
-283876000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000000
-283895000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002002, pim_mode=0
-283895000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002002
-283908000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000002, pim_mode=0
-283908000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000002
-283927000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002004, pim_mode=0
-283927000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002004
-283940000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000004, pim_mode=0
-283940000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000004
-283959000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002006, pim_mode=0
-283959000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002006
-283972000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000006, pim_mode=0
-283972000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000006
-283991000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002008, pim_mode=0
-283991000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002008
-284004000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000008, pim_mode=0
-284004000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000008
-284023000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000200a, pim_mode=0
-284023000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000200a
-284036000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100000a, pim_mode=0
-284036000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100000a
-284055000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000200c, pim_mode=0
-284055000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000200c
-284068000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100000c, pim_mode=0
-284068000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100000c
-284087000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000200e, pim_mode=0
-284087000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000200e
-284100000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100000e, pim_mode=0
-284100000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100000e
-284119000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002010, pim_mode=0
-284119000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002010
-284132000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000010, pim_mode=0
-284132000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000010
-284151000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002012, pim_mode=0
-284151000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002012
-284164000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000012, pim_mode=0
-284164000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000012
-284183000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002014, pim_mode=0
-284183000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002014
-284196000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000014, pim_mode=0
-284196000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000014
-284215000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002016, pim_mode=0
-284215000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002016
-284228000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000016, pim_mode=0
-284228000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000016
-284247000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002018, pim_mode=0
-284247000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002018
-284260000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000018, pim_mode=0
-284260000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000018
-284279000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000201a, pim_mode=0
-284279000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000201a
-284292000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100001a, pim_mode=0
-284292000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100001a
-284311000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000201c, pim_mode=0
-284311000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000201c
-284324000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100001c, pim_mode=0
-284324000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100001c
-284343000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000201e, pim_mode=0
-284343000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000201e
-284356000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100001e, pim_mode=0
-284356000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100001e
-284375000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002020, pim_mode=0
-284375000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002020
-284388000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000020, pim_mode=0
-284388000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000020
-284407000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002022, pim_mode=0
-284407000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002022
-284420000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000022, pim_mode=0
-284420000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000022
-284439000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002024, pim_mode=0
-284439000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002024
-284452000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000024, pim_mode=0
-284452000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000024
-284471000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002026, pim_mode=0
-284471000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002026
-284484000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000026, pim_mode=0
-284484000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000026
-284503000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002028, pim_mode=0
-284503000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002028
-284516000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000028, pim_mode=0
-284516000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000028
-284535000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000202a, pim_mode=0
-284535000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000202a
-284548000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100002a, pim_mode=0
-284548000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100002a
-284567000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000202c, pim_mode=0
-284567000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000202c
-284580000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100002c, pim_mode=0
-284580000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100002c
-284599000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000202e, pim_mode=0
-284599000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000202e
-284612000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100002e, pim_mode=0
-284612000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100002e
-284631000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002030, pim_mode=0
-284631000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002030
-284644000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000030, pim_mode=0
-284644000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000030
-284663000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002032, pim_mode=0
-284663000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002032
-284676000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000032, pim_mode=0
-284676000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000032
-284695000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002034, pim_mode=0
-284695000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002034
-284708000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000034, pim_mode=0
-284708000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000034
-284727000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002036, pim_mode=0
-284727000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002036
-284740000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000036, pim_mode=0
-284740000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000036
-284759000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002038, pim_mode=0
-284759000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002038
-284772000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000038, pim_mode=0
-284772000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000038
-284791000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000203a, pim_mode=0
-284791000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000203a
-284804000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100003a, pim_mode=0
-284804000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100003a
-284823000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000203c, pim_mode=0
-284823000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000203c
-284836000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100003c, pim_mode=0
-284836000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100003c
-284855000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000203e, pim_mode=0
-284855000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000203e
-284868000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100003e, pim_mode=0
-284868000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100003e
-284962000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xc4000002, pim_mode=0
-284962000: board.pim.mem_ctrl.dram: Formatting raw instruction 0x32c00000
-284962000: board.pim.mem_ctrl.dram: Formatted data instruction type 3 dest 1 dest_idx 0 src0 3 src0_idx 0 do_relu 0
-284962000: board.pim.mem_ctrl.dram: Loaded instruction MOV into CRF index 0
-284968000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xc4000006, pim_mode=0
-284968000: board.pim.mem_ctrl.dram: Formatting raw instruction 0x44580000
-284968000: board.pim.mem_ctrl.dram: Formatted ALU instruction type 4 dest 2 dest_idx 0 src0 1 src0_idx 0 src1 3 src1_idx 0 src2 0 src2_idx 0
-284968000: board.pim.mem_ctrl.dram: Loaded instruction ADD into CRF index 1
-284973000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xc400000a, pim_mode=0
-284973000: board.pim.mem_ctrl.dram: Formatting raw instruction 0x36800000
-284973000: board.pim.mem_ctrl.dram: Formatted data instruction type 3 dest 3 dest_idx 0 src0 2 src0_idx 0 do_relu 0
-284973000: board.pim.mem_ctrl.dram: Loaded instruction MOV into CRF index 2
-284986000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xc400000e, pim_mode=0
-284986000: board.pim.mem_ctrl.dram: Formatting raw instruction 0x10001801
-284986000: board.pim.mem_ctrl.dram: Formatted control instruction type 1 imm0 3 imm1 1
-284986000: board.pim.mem_ctrl.dram: Loaded instruction JUMP into CRF index 3
-284993000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xc4000012, pim_mode=0
-284993000: board.pim.mem_ctrl.dram: Formatting raw instruction 0x20000000
-284993000: board.pim.mem_ctrl.dram: Formatted control instruction type 2 imm0 0 imm1 0
-284993000: board.pim.mem_ctrl.dram: Loaded instruction EXIT into CRF index 4
-284998000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xc4000000, pim_mode=0
-284998000: board.pim.mem_ctrl.dram: Entering PIM mode
-285022000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002000, pim_mode=1
-285022000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
-285022000: board.pim.mem_ctrl.dram: Executing instruction 0
-285034000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000000, pim_mode=1
-285034000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
-285034000: board.pim.mem_ctrl.dram: Executing instruction 1
-285048000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000000, pim_mode=1
-285048000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
-285048000: board.pim.mem_ctrl.dram: Executing instruction 2
-285052000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000000, pim_mode=1
-285052000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
-285052000: board.pim.mem_ctrl.dram: Executing instruction 3
-285074000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002020, pim_mode=1
-285074000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
-285074000: board.pim.mem_ctrl.dram: Executing instruction 0
-285086000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000020, pim_mode=1
-285086000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
-285086000: board.pim.mem_ctrl.dram: Executing instruction 1
-285100000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000020, pim_mode=1
-285100000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
-285100000: board.pim.mem_ctrl.dram: Executing instruction 2
-285104000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000000, pim_mode=1
-285104000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
-285104000: board.pim.mem_ctrl.dram: Executing instruction 3
-285120000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000000, pim_mode=1
-285120000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
-285120000: board.pim.mem_ctrl.dram: Executing instruction 4
-285120000: board.pim.mem_ctrl.dram: Exiting PIM mode
+284136000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000000, pim_mode=0
+284136000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000000
+284137000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000008, pim_mode=0
+284137000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000008
+284138000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000010, pim_mode=0
+284138000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000010
+284139000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000018, pim_mode=0
+284139000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000018
+284147000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000020, pim_mode=0
+284147000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000020
+284148000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000028, pim_mode=0
+284148000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000028
+284150000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000030, pim_mode=0
+284150000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000030
+284151000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000038, pim_mode=0
+284151000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000038
+284160000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000010, pim_mode=0
+284160000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000010
+284161000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000018, pim_mode=0
+284161000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000018
+284162000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000020, pim_mode=0
+284162000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000020
+284163000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000028, pim_mode=0
+284163000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000028
+284165000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000030, pim_mode=0
+284165000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000030
+284166000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000038, pim_mode=0
+284166000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000038
+284167000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000040, pim_mode=0
+284167000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000040
+284168000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000048, pim_mode=0
+284168000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000048
+284211000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002000, pim_mode=0
+284211000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002000
+284221000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000000, pim_mode=0
+284221000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000000
+284242000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002002, pim_mode=0
+284242000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002002
+284252000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000002, pim_mode=0
+284252000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000002
+284273000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002004, pim_mode=0
+284273000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002004
+284283000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000004, pim_mode=0
+284283000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000004
+284304000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002006, pim_mode=0
+284304000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002006
+284314000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000006, pim_mode=0
+284314000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000006
+284335000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002008, pim_mode=0
+284335000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002008
+284345000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000008, pim_mode=0
+284345000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000008
+284366000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000200a, pim_mode=0
+284366000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000200a
+284376000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100000a, pim_mode=0
+284376000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100000a
+284397000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000200c, pim_mode=0
+284397000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000200c
+284407000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100000c, pim_mode=0
+284407000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100000c
+284428000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000200e, pim_mode=0
+284428000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000200e
+284438000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100000e, pim_mode=0
+284438000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100000e
+284459000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002010, pim_mode=0
+284459000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002010
+284469000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000010, pim_mode=0
+284469000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000010
+284490000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002012, pim_mode=0
+284490000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002012
+284500000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000012, pim_mode=0
+284500000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000012
+284521000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002014, pim_mode=0
+284521000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002014
+284531000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000014, pim_mode=0
+284531000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000014
+284552000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002016, pim_mode=0
+284552000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002016
+284562000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000016, pim_mode=0
+284562000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000016
+284583000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002018, pim_mode=0
+284583000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002018
+284593000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000018, pim_mode=0
+284593000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000018
+284614000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000201a, pim_mode=0
+284614000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000201a
+284624000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100001a, pim_mode=0
+284624000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100001a
+284645000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000201c, pim_mode=0
+284645000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000201c
+284655000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100001c, pim_mode=0
+284655000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100001c
+284676000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000201e, pim_mode=0
+284676000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000201e
+284686000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100001e, pim_mode=0
+284686000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100001e
+284707000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002020, pim_mode=0
+284707000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002020
+284717000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000020, pim_mode=0
+284717000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000020
+284738000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002022, pim_mode=0
+284738000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002022
+284748000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000022, pim_mode=0
+284748000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000022
+284769000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002024, pim_mode=0
+284769000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002024
+284779000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000024, pim_mode=0
+284779000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000024
+284800000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002026, pim_mode=0
+284800000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002026
+284810000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000026, pim_mode=0
+284810000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000026
+284831000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002028, pim_mode=0
+284831000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002028
+284841000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000028, pim_mode=0
+284841000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000028
+284862000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000202a, pim_mode=0
+284862000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000202a
+284872000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100002a, pim_mode=0
+284872000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100002a
+284893000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000202c, pim_mode=0
+284893000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000202c
+284903000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100002c, pim_mode=0
+284903000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100002c
+284924000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000202e, pim_mode=0
+284924000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000202e
+284934000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100002e, pim_mode=0
+284934000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100002e
+284955000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002030, pim_mode=0
+284955000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002030
+284965000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000030, pim_mode=0
+284965000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000030
+284986000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002032, pim_mode=0
+284986000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002032
+284996000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000032, pim_mode=0
+284996000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000032
+285017000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002034, pim_mode=0
+285017000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002034
+285027000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000034, pim_mode=0
+285027000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000034
+285048000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002036, pim_mode=0
+285048000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002036
+285058000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000036, pim_mode=0
+285058000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000036
+285079000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002038, pim_mode=0
+285079000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002038
+285089000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000038, pim_mode=0
+285089000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000038
+285110000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000203a, pim_mode=0
+285110000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000203a
+285120000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100003a, pim_mode=0
+285120000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100003a
+285141000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000203c, pim_mode=0
+285141000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000203c
+285151000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100003c, pim_mode=0
+285151000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100003c
+285172000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000203e, pim_mode=0
+285172000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000203e
+285182000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100003e, pim_mode=0
+285182000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100003e
+285203000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002040, pim_mode=0
+285203000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002040
+285213000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000040, pim_mode=0
+285213000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000040
+285234000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002042, pim_mode=0
+285234000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002042
+285244000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000042, pim_mode=0
+285244000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000042
+285265000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002044, pim_mode=0
+285265000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002044
+285275000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000044, pim_mode=0
+285275000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000044
+285296000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002046, pim_mode=0
+285296000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002046
+285306000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000046, pim_mode=0
+285306000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000046
+285327000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002048, pim_mode=0
+285327000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002048
+285337000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000048, pim_mode=0
+285337000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000048
+285358000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000204a, pim_mode=0
+285358000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000204a
+285368000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100004a, pim_mode=0
+285368000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100004a
+285389000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000204c, pim_mode=0
+285389000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000204c
+285399000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100004c, pim_mode=0
+285399000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100004c
+285420000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000204e, pim_mode=0
+285420000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000204e
+285430000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100004e, pim_mode=0
+285430000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100004e
+285451000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002050, pim_mode=0
+285451000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002050
+285461000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000050, pim_mode=0
+285461000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000050
+285482000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002052, pim_mode=0
+285482000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002052
+285492000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000052, pim_mode=0
+285492000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000052
+285513000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002054, pim_mode=0
+285513000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002054
+285523000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000054, pim_mode=0
+285523000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000054
+285544000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002056, pim_mode=0
+285544000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002056
+285554000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000056, pim_mode=0
+285554000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000056
+285575000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002058, pim_mode=0
+285575000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002058
+285585000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000058, pim_mode=0
+285585000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000058
+285606000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000205a, pim_mode=0
+285606000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000205a
+285616000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100005a, pim_mode=0
+285616000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100005a
+285637000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000205c, pim_mode=0
+285637000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000205c
+285647000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100005c, pim_mode=0
+285647000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100005c
+285668000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000205e, pim_mode=0
+285668000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000205e
+285678000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100005e, pim_mode=0
+285678000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100005e
+285699000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002060, pim_mode=0
+285699000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002060
+285709000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000060, pim_mode=0
+285709000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000060
+285730000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002062, pim_mode=0
+285730000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002062
+285740000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000062, pim_mode=0
+285740000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000062
+285761000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002064, pim_mode=0
+285761000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002064
+285771000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000064, pim_mode=0
+285771000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000064
+285792000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002066, pim_mode=0
+285792000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002066
+285802000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000066, pim_mode=0
+285802000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000066
+285823000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002068, pim_mode=0
+285823000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002068
+285833000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000068, pim_mode=0
+285833000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000068
+285854000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000206a, pim_mode=0
+285854000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000206a
+285864000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100006a, pim_mode=0
+285864000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100006a
+285885000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000206c, pim_mode=0
+285885000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000206c
+285895000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100006c, pim_mode=0
+285895000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100006c
+285916000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000206e, pim_mode=0
+285916000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000206e
+285926000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100006e, pim_mode=0
+285926000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100006e
+285947000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002070, pim_mode=0
+285947000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002070
+285957000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000070, pim_mode=0
+285957000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000070
+285978000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002072, pim_mode=0
+285978000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002072
+285988000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000072, pim_mode=0
+285988000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000072
+286009000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002074, pim_mode=0
+286009000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002074
+286019000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000074, pim_mode=0
+286019000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000074
+286040000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002076, pim_mode=0
+286040000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002076
+286050000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000076, pim_mode=0
+286050000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000076
+286071000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002078, pim_mode=0
+286071000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002078
+286081000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000078, pim_mode=0
+286081000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000078
+286102000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000207a, pim_mode=0
+286102000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000207a
+286112000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100007a, pim_mode=0
+286112000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100007a
+286133000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000207c, pim_mode=0
+286133000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000207c
+286143000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100007c, pim_mode=0
+286143000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100007c
+286164000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd000207e, pim_mode=0
+286164000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd000207e
+286174000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd100007e, pim_mode=0
+286174000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd100007e
+286195000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002080, pim_mode=0
+286195000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002080
+286205000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000080, pim_mode=0
+286205000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000080
+286226000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002082, pim_mode=0
+286226000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd0002082
+286236000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000082, pim_mode=0
+286236000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000082
+286343000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xc4000002, pim_mode=0
+286343000: board.pim.mem_ctrl.dram: Formatting raw instruction 0x32c00000
+286343000: board.pim.mem_ctrl.dram: Formatted data instruction type 3 dest 1 dest_idx 0 src0 3 src0_idx 0 do_relu 0
+286343000: board.pim.mem_ctrl.dram: Loaded instruction MOV into CRF index 0
+286350000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xc4000006, pim_mode=0
+286350000: board.pim.mem_ctrl.dram: Formatting raw instruction 0x44580000
+286350000: board.pim.mem_ctrl.dram: Formatted ALU instruction type 4 dest 2 dest_idx 0 src0 1 src0_idx 0 src1 3 src1_idx 0 src2 0 src2_idx 0
+286350000: board.pim.mem_ctrl.dram: Loaded instruction ADD into CRF index 1
+286357000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xc400000a, pim_mode=0
+286357000: board.pim.mem_ctrl.dram: Formatting raw instruction 0x36800000
+286357000: board.pim.mem_ctrl.dram: Formatted data instruction type 3 dest 3 dest_idx 0 src0 2 src0_idx 0 do_relu 0
+286357000: board.pim.mem_ctrl.dram: Loaded instruction MOV into CRF index 2
+286370000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xc400000e, pim_mode=0
+286370000: board.pim.mem_ctrl.dram: Formatting raw instruction 0x10001803
+286370000: board.pim.mem_ctrl.dram: Formatted control instruction type 1 imm0 3 imm1 3
+286370000: board.pim.mem_ctrl.dram: Loaded instruction JUMP into CRF index 3
+286383000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xc4000016, pim_mode=0
+286383000: board.pim.mem_ctrl.dram: Formatting raw instruction 0x32c00000
+286383000: board.pim.mem_ctrl.dram: Formatted data instruction type 3 dest 1 dest_idx 0 src0 3 src0_idx 0 do_relu 0
+286383000: board.pim.mem_ctrl.dram: Loaded instruction MOV into CRF index 5
+286390000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xc400001a, pim_mode=0
+286390000: board.pim.mem_ctrl.dram: Formatting raw instruction 0x44580000
+286390000: board.pim.mem_ctrl.dram: Formatted ALU instruction type 4 dest 2 dest_idx 0 src0 1 src0_idx 0 src1 3 src1_idx 0 src2 0 src2_idx 0
+286390000: board.pim.mem_ctrl.dram: Loaded instruction ADD into CRF index 6
+286397000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xc400001e, pim_mode=0
+286397000: board.pim.mem_ctrl.dram: Formatting raw instruction 0x36800000
+286397000: board.pim.mem_ctrl.dram: Formatted data instruction type 3 dest 3 dest_idx 0 src0 2 src0_idx 0 do_relu 0
+286397000: board.pim.mem_ctrl.dram: Loaded instruction MOV into CRF index 7
+286403000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xc4000012, pim_mode=0
+286403000: board.pim.mem_ctrl.dram: Formatting raw instruction 0x20000000
+286403000: board.pim.mem_ctrl.dram: Formatted control instruction type 2 imm0 0 imm1 0
+286403000: board.pim.mem_ctrl.dram: Loaded instruction EXIT into CRF index 4
+286409000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xc4000000, pim_mode=0
+286409000: board.pim.mem_ctrl.dram: Entering PIM mode
+286430000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002000, pim_mode=1
+286430000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
+286430000: board.pim.mem_ctrl.dram: Executing instruction 0
+286441000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000000, pim_mode=1
+286441000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
+286441000: board.pim.mem_ctrl.dram: Executing instruction 1
+286454000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000000, pim_mode=1
+286454000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
+286454000: board.pim.mem_ctrl.dram: Executing instruction 2
+286458000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000000, pim_mode=1
+286458000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
+286458000: board.pim.mem_ctrl.dram: Executing instruction 3
+286479000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002020, pim_mode=1
+286479000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
+286479000: board.pim.mem_ctrl.dram: Executing instruction 0
+286490000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000020, pim_mode=1
+286490000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
+286490000: board.pim.mem_ctrl.dram: Executing instruction 1
+286503000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000020, pim_mode=1
+286503000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
+286503000: board.pim.mem_ctrl.dram: Executing instruction 2
+286507000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000000, pim_mode=1
+286507000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
+286507000: board.pim.mem_ctrl.dram: Executing instruction 3
+286528000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002040, pim_mode=1
+286528000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
+286528000: board.pim.mem_ctrl.dram: Executing instruction 0
+286539000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000040, pim_mode=1
+286539000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
+286539000: board.pim.mem_ctrl.dram: Executing instruction 1
+286552000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000040, pim_mode=1
+286552000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
+286552000: board.pim.mem_ctrl.dram: Executing instruction 2
+286556000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000000, pim_mode=1
+286556000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
+286556000: board.pim.mem_ctrl.dram: Executing instruction 3
+286577000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002060, pim_mode=1
+286577000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
+286577000: board.pim.mem_ctrl.dram: Executing instruction 0
+286588000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000060, pim_mode=1
+286588000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
+286588000: board.pim.mem_ctrl.dram: Executing instruction 1
+286601000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000060, pim_mode=1
+286601000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
+286601000: board.pim.mem_ctrl.dram: Executing instruction 2
+286605000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000000, pim_mode=1
+286605000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
+286605000: board.pim.mem_ctrl.dram: Executing instruction 3
+286632000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd0002080, pim_mode=1
+286632000: board.pim.mem_ctrl.dram: PIM mode active, executing kernel
+286632000: board.pim.mem_ctrl.dram: Executing instruction 4
+286632000: board.pim.mem_ctrl.dram: Exiting PIM mode
+286643000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd1000080, pim_mode=0
+286643000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd1000080
+286656000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000080, pim_mode=0
+286656000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000080
+286660000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000000, pim_mode=0
+286660000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000000
 Resultado de la suma vectorial:
-290862000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000000, pim_mode=0
-290862000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000000
+292402000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000000, pim_mode=0
+292402000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000000
 C[0] = 0
-293436000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000002, pim_mode=0
-293436000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000002
+294975000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000002, pim_mode=0
+294975000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000002
 C[1] = 3
-296046000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000004, pim_mode=0
-296046000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000004
+297584000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000004, pim_mode=0
+297584000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000004
 C[2] = 6
-298656000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000006, pim_mode=0
-298656000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000006
+300193000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000006, pim_mode=0
+300193000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000006
 C[3] = 9
-301266000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000008, pim_mode=0
-301266000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000008
+302802000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000008, pim_mode=0
+302802000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000008
 C[4] = 12
-303903000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200000a, pim_mode=0
-303903000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200000a
+305438000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200000a, pim_mode=0
+305438000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200000a
 C[5] = 15
-306540000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200000c, pim_mode=0
-306540000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200000c
+308074000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200000c, pim_mode=0
+308074000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200000c
 C[6] = 18
-309177000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200000e, pim_mode=0
-309177000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200000e
+310710000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200000e, pim_mode=0
+310710000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200000e
 C[7] = 21
-311814000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000010, pim_mode=0
-311814000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000010
+313346000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000010, pim_mode=0
+313346000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000010
 C[8] = 24
-314451000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000012, pim_mode=0
-314451000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000012
+315982000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000012, pim_mode=0
+315982000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000012
 C[9] = 27
-317088000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000014, pim_mode=0
-317088000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000014
+318618000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000014, pim_mode=0
+318618000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000014
 C[10] = 30
-319752000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000016, pim_mode=0
-319752000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000016
+321281000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000016, pim_mode=0
+321281000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000016
 C[11] = 33
-322416000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000018, pim_mode=0
-322416000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000018
+323944000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000018, pim_mode=0
+323944000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000018
 C[12] = 36
-325080000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200001a, pim_mode=0
-325080000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200001a
+326607000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200001a, pim_mode=0
+326607000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200001a
 C[13] = 39
-327744000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200001c, pim_mode=0
-327744000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200001c
+329270000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200001c, pim_mode=0
+329270000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200001c
 C[14] = 42
-330408000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200001e, pim_mode=0
-330408000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200001e
+331933000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200001e, pim_mode=0
+331933000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200001e
 C[15] = 45
-333072000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000020, pim_mode=0
-333072000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000020
+334596000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000020, pim_mode=0
+334596000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000020
 C[16] = 48
-335736000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000022, pim_mode=0
-335736000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000022
+337259000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000022, pim_mode=0
+337259000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000022
 C[17] = 51
-338400000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000024, pim_mode=0
-338400000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000024
+339922000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000024, pim_mode=0
+339922000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000024
 C[18] = 54
-341064000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000026, pim_mode=0
-341064000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000026
+342585000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000026, pim_mode=0
+342585000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000026
 C[19] = 57
-343728000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000028, pim_mode=0
-343728000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000028
+345248000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000028, pim_mode=0
+345248000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000028
 C[20] = 60
-346392000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200002a, pim_mode=0
-346392000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200002a
+347911000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200002a, pim_mode=0
+347911000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200002a
 C[21] = 63
-349056000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200002c, pim_mode=0
-349056000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200002c
+350574000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200002c, pim_mode=0
+350574000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200002c
 C[22] = 66
-351720000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200002e, pim_mode=0
-351720000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200002e
+353237000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200002e, pim_mode=0
+353237000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200002e
 C[23] = 69
-354384000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000030, pim_mode=0
-354384000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000030
+355900000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000030, pim_mode=0
+355900000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000030
 C[24] = 72
-357048000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000032, pim_mode=0
-357048000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000032
+358563000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000032, pim_mode=0
+358563000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000032
 C[25] = 75
-359712000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000034, pim_mode=0
-359712000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000034
+361226000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000034, pim_mode=0
+361226000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000034
 C[26] = 78
-362376000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000036, pim_mode=0
-362376000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000036
+363889000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000036, pim_mode=0
+363889000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000036
 C[27] = 81
-365040000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000038, pim_mode=0
-365040000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000038
+366552000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000038, pim_mode=0
+366552000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000038
 C[28] = 84
-367704000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200003a, pim_mode=0
-367704000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200003a
+369215000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200003a, pim_mode=0
+369215000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200003a
 C[29] = 87
-370368000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200003c, pim_mode=0
-370368000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200003c
+371878000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200003c, pim_mode=0
+371878000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200003c
 C[30] = 90
-373032000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200003e, pim_mode=0
-373032000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200003e
+374541000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200003e, pim_mode=0
+374541000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200003e
 C[31] = 93
+377204000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000040, pim_mode=0
+377204000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000040
+C[32] = 96
+379867000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000042, pim_mode=0
+379867000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000042
+C[33] = 99
+382530000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000044, pim_mode=0
+382530000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000044
+C[34] = 102
+385216000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000046, pim_mode=0
+385216000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000046
+C[35] = 105
+387902000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000048, pim_mode=0
+387902000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000048
+C[36] = 108
+390588000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200004a, pim_mode=0
+390588000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200004a
+C[37] = 111
+393274000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200004c, pim_mode=0
+393274000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200004c
+C[38] = 114
+395960000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200004e, pim_mode=0
+395960000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200004e
+C[39] = 117
+398646000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000050, pim_mode=0
+398646000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000050
+C[40] = 120
+401332000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000052, pim_mode=0
+401332000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000052
+C[41] = 123
+404018000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000054, pim_mode=0
+404018000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000054
+C[42] = 126
+406704000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000056, pim_mode=0
+406704000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000056
+C[43] = 129
+409390000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000058, pim_mode=0
+409390000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000058
+C[44] = 132
+412076000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200005a, pim_mode=0
+412076000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200005a
+C[45] = 135
+414762000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200005c, pim_mode=0
+414762000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200005c
+C[46] = 138
+417448000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200005e, pim_mode=0
+417448000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200005e
+C[47] = 141
+420134000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000060, pim_mode=0
+420134000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000060
+C[48] = 144
+422820000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000062, pim_mode=0
+422820000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000062
+C[49] = 147
+425506000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000064, pim_mode=0
+425506000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000064
+C[50] = 150
+428192000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000066, pim_mode=0
+428192000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000066
+C[51] = 153
+430878000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000068, pim_mode=0
+430878000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000068
+C[52] = 156
+433564000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200006a, pim_mode=0
+433564000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200006a
+C[53] = 159
+436250000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200006c, pim_mode=0
+436250000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200006c
+C[54] = 162
+438936000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200006e, pim_mode=0
+438936000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200006e
+C[55] = 165
+441622000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000070, pim_mode=0
+441622000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000070
+C[56] = 168
+444308000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000072, pim_mode=0
+444308000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000072
+C[57] = 171
+446994000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000074, pim_mode=0
+446994000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000074
+C[58] = 174
+449680000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000076, pim_mode=0
+449680000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000076
+C[59] = 177
+452366000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000078, pim_mode=0
+452366000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000078
+C[60] = 180
+455052000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200007a, pim_mode=0
+455052000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200007a
+C[61] = 183
+457738000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200007c, pim_mode=0
+457738000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200007c
+C[62] = 186
+460424000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd200007e, pim_mode=0
+460424000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd200007e
+C[63] = 189
+463110000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000080, pim_mode=0
+463110000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000080
+C[64] = 0
+465728000: board.pim.mem_ctrl.dram: PIMInterface::access called with addr 0xd2000082, pim_mode=0
+465728000: board.pim.mem_ctrl.dram: Normal DRAM access at address 0xd2000082
+C[65] = 0

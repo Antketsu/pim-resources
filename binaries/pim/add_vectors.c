@@ -1,16 +1,14 @@
 #include <stdio.h>
 #include <stdint.h>
 #include "pim.h"
-#include <gem5/m5ops.h>
 #include <stdlib.h>
 int main(){
     init_pim();
     pim_operand A, B, C;
-    int size = 32;
+    int size = 16 * 4 + 2;
     init_operand(&A, size);
     init_operand(&B, size);
     init_operand(&C, size);
-    m5_exit(0);
 
     for (int i = 0; i < size; i++) {
         A.vector[i] = i;
