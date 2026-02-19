@@ -6,8 +6,10 @@ size_t pim_size = 0x1000000;  // 16 MB
 
 uint64_t next_addr = 0x20000000;
 
-int init_operand(pim_operand *op, int8_t elems){ 
-    op->size = elems;
+int init_operand(pim_operand *op, uint8_t rows, uint8_t cols){ 
+    op->rows = rows;
+    op->cols = cols;
+    uint8_t elems = rows * cols;
     uint8_t real_elems = 16 * (elems / 16 + (elems % 16 > 0 ? 1 : 0));
     op->vector = mmap(
         (void *)next_addr,  
@@ -28,13 +30,17 @@ int init_operand(pim_operand *op, int8_t elems){
 }
 
 int add(pim_operand A, pim_operand B, pim_operand C){
-        if(A.size != B.size || A. size != C.size)
+        uint32_t elems = A.rows * A.cols;
+        printf("%u\n", elems);
+        printf("%u\n", B.rows * B.cols);
+        printf("%u\n", C.rows * C.cols);
+        if(elems != B.rows * B.cols || elems != C.rows * C.cols)
             return 1;
         int16_t *v1 = A.vector;
         int16_t *v2 = B.vector;
         int16_t *v3 = C.vector;
-        uint16_t loops = A.size / 16;
-        uint8_t tail = A.size % 16;
+        uint16_t loops = elems / 16;
+        uint8_t tail = elems % 16;
         uint32_t *crf_start = (uint32_t *)(pim_region + 2); // CRF starts at offset 2 in the PIM region
         //MOV GRF_A0, BANK1
         crf_start[0] = (3 << 28) | (1 << 25) | (3 << 22) | (0 << 19) | (0 << 8) |

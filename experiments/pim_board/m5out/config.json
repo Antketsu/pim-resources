@@ -21,7 +21,7 @@
         "external_memory_ranges": [],
         "init_param": 0,
         "m5ops_base": 4294901760,
-        "mem_mode": "atomic",
+        "mem_mode": "timing",
         "mem_ranges": [
             "0:3221225472",
             "3221225472:6442450944"
@@ -1152,8 +1152,8 @@
                     "eventq_index": 0,
                     "thermal_domain": null,
                     "core": {
-                        "type": "BaseAtomicSimpleCPU",
-                        "cxx_class": "gem5::AtomicSimpleCPU",
+                        "type": "BaseTimingSimpleCPU",
+                        "cxx_class": "gem5::TimingSimpleCPU",
                         "name": "core",
                         "path": "board.processor.cores.core",
                         "branchPred": null,
@@ -1392,8 +1392,6 @@
                         "progress_interval": 0,
                         "pwr_gating_latency": 300,
                         "simpoint_start_insts": [],
-                        "simulate_data_stalls": false,
-                        "simulate_inst_stalls": false,
                         "socket_id": 0,
                         "switched_out": false,
                         "syscallRetryLatency": 10000,
@@ -1412,7 +1410,6 @@
                             },
                             "eventq_index": 0
                         },
-                        "width": 1,
                         "workload": [
                             {
                                 "type": "Process",
@@ -1420,7 +1417,7 @@
                                 "name": "workload",
                                 "path": "board.processor.cores.core.workload",
                                 "cmd": [
-                                    "/homelocal/antoma19_local/u/tfm/pim-resources/binaries/pim/add_vectors"
+                                    "/homelocal/antoma19_local/u/tfm/pim-resources/binaries/pim/add_matrix"
                                 ],
                                 "cwd": "/homelocal/antoma19_local/u/tfm/pim-resources/experiments/pim_board",
                                 "drivers": [],
@@ -1429,7 +1426,7 @@
                                 "errout": "cerr",
                                 "euid": 100,
                                 "eventq_index": 0,
-                                "executable": "/homelocal/antoma19_local/u/tfm/pim-resources/binaries/pim/add_vectors",
+                                "executable": "/homelocal/antoma19_local/u/tfm/pim-resources/binaries/pim/add_matrix",
                                 "gid": 100,
                                 "input": "cin",
                                 "kvmInSE": false,

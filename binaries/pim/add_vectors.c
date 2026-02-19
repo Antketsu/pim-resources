@@ -6,9 +6,9 @@ int main(){
     init_pim();
     pim_operand A, B, C;
     int size = 16 * 4 + 2;
-    init_operand(&A, size);
-    init_operand(&B, size);
-    init_operand(&C, size);
+    init_operand(&A, 1, size);
+    init_operand(&B, 1, size);
+    init_operand(&C, 1, size);
 
     for (int i = 0; i < size; i++) {
         A.vector[i] = i;

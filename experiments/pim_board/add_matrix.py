@@ -62,7 +62,7 @@ def exit_handler():
     yield False
     yield True
 
-board.set_se_binary_workload(BinaryResource("/homelocal/antoma19_local/u/tfm/pim-resources/binaries/pim/add_vectors"))
+board.set_se_binary_workload(BinaryResource("/homelocal/antoma19_local/u/tfm/pim-resources/binaries/pim/add_matrix"))
 simulator = Simulator(
     board=board,
     on_exit_event= {
