@@ -5,7 +5,7 @@
 int main(){
     init_pim();
     pim_operand A, B, C;
-    uint8_t rows = 4;
+    uint8_t rows = 35;
     uint8_t cols = 16 * 4 + 2;
     init_operand(&A, rows, cols);
     init_operand(&B, rows, cols);

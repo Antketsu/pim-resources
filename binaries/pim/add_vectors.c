@@ -5,12 +5,13 @@
 int main(){
     init_pim();
     pim_operand A, B, C;
-    int size = 16 * 4 + 2;
-    init_operand(&A, 1, size);
-    init_operand(&B, 1, size);
-    init_operand(&C, 1, size);
+    int cols = 16 * 10 + 4;
+    init_operand(&A, 1, cols);
+    init_operand(&B, 1, cols);
+    init_operand(&C, 1, cols);
 
-    for (int i = 0; i < size; i++) {
+
+    for (int i = 0; i < cols; i++) {
         A.vector[i] = i;
         B.vector[i] = 2 * i;
     }
@@ -21,9 +22,8 @@ int main(){
     }
     
     printf("Resultado de la suma vectorial:\n");
-    for(int i = 0; i < size; i++) {
+    for(int i = 0; i < cols; i++) {
         printf("C[%d] = %d\n", i, C.vector[i]);
     }
-
 
 }

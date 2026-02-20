@@ -31,7 +31,7 @@ cache_hierarchy = PrivateL1SharedL2CacheHierarchy(
 # Setup the system memory.
 memory = SingleChannelDDR4_2400(size="3GB")
 
-processor = SimpleProcessor(num_cores=1,isa=ISA.X86,cpu_type=CPUTypes.TIMING)
+processor = SimpleProcessor(num_cores=1,isa=ISA.X86,cpu_type=CPUTypes.ATOMIC)
 
 pim = PIMAccelerator(size="3GB")
 
