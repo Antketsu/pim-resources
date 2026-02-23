@@ -1,6 +1,8 @@
 #include "pim.h"
 
 int8_t *pim_region;
+uint32_t *crf_start;
+uint8_t instr_idx = 0;
 
 size_t pim_size = 0x1000000;  // 16 MB
 
@@ -10,7 +12,7 @@ int init_operand(pim_operand *op, uint8_t rows, uint8_t cols){
     op->rows = rows;
     op->cols = cols;
     uint8_t elems = rows * cols;
-    uint8_t real_elems = 16 * (elems / 16 + (elems % 16 > 0 ? 1 : 0));
+    uint8_t real_elems = SIMD_WIDTH * (elems / SIMD_WIDTH + (elems % SIMD_WIDTH > 0 ? 1 : 0));
     op->vector = mmap(
         (void *)next_addr,  
         real_elems * 2, // 16 bits per element
@@ -29,6 +31,16 @@ int init_operand(pim_operand *op, uint8_t rows, uint8_t cols){
     return 0;
 }
 
+void write_add_block(uint8_t op_idx){
+    //MOV GRF_A0, BANK1
+    crf_start[instr_idx++] = DATA_INST(3, 1, 3, 0, op_idx, 0);
+    //ADD GRF_B0, GRF_A0, BANK0
+    crf_start[instr_idx++] = ALU_INST(4, 2, 1, 3, 0, op_idx, op_idx, 0);
+    // MOV BANK0, GRF_B0
+    crf_start[instr_idx++] = DATA_INST(3, 3, 2, 0, 0, op_idx);
+}
+
+
 int add(pim_operand A, pim_operand B, pim_operand C){
         uint64_t elems = A.rows * A.cols;
         if(elems != B.rows * B.cols || elems != C.rows * C.cols)
@@ -42,67 +54,44 @@ int add(pim_operand A, pim_operand B, pim_operand C){
         //CRF, this is maximum registers we can use in the worst case
         //where we do 3 instructions for each reg, we have JUMP,
         //a tail of 5 registers and EXIT. 5 * 3 + 1 + 5 * 3 + 1 = 32
-        uint8_t regs = elems / 16 > 5 ? 5 : elems / 16;
-        uint8_t loops = elems / (16 * regs);
-        int tail = elems % (16 * regs);
+        uint8_t regs = elems / SIMD_WIDTH > 5 ? 5 : elems / SIMD_WIDTH;
+        uint8_t loops = elems / (SIMD_WIDTH * regs);
+        int tail = elems % (SIMD_WIDTH * regs);
         printf("Regs:%d\n", regs);
         printf("Loops:%d\n", loops); 
         printf("Tail:%d\n", tail); 
  
-        
-        uint32_t *crf_start = (uint32_t *)(pim_region + 4); // CRF starts at offset 2 in the PIM region
-        uint8_t instr_idx = 0;
         for(uint8_t i = 0; i < regs; ++i){
-            //MOV GRF_A0, BANK1
-            crf_start[instr_idx++] = (3 << 28) | (1 << 25) | (3 << 22) | (0 << 19) | (i << 8) |
-                        (0 << 4) | (0);
-            //ADD GRF_B0, GRF_A0, BANK0
-            crf_start[instr_idx++] = (4 << 28) | (2 << 25) | (1 << 22) | (3 << 19) | (i << 8) |
-                        (i << 4) | (0);
-            // MOV BANK0, GRF_B0
-            crf_start[instr_idx++] = (3 << 28) | (3 << 25) | (2 << 22) | (0 << 19) | (0 << 8) |
-                        (i << 4) | (0);          
+            write_add_block(i);        
         }
         if(loops > 1){
             // JUMP 3, loops
             crf_start[instr_idx++] = (1 << 28) | (3 * regs << 11) | (loops - 1);
         }
-        for(uint8_t i = 0; tail > 0 && i * 16 < tail; ++i){
-            //MOV GRF_A0, BANK1
-            crf_start[instr_idx++] = (3 << 28) | (1 << 25) | (3 << 22) | (0 << 19) | (i << 8) |
-                        (0 << 4) | (0);
-            //ADD GRF_B0, GRF_A0, BANK0
-            crf_start[instr_idx++] = (4 << 28) | (2 << 25) | (1 << 22) | (3 << 19) | (i << 8) |
-                        (i << 4) | (0);
-            // MOV BANK0, GRF_B0
-            crf_start[instr_idx++] = (3 << 28) | (3 << 25) | (2 << 22) | (0 << 19) | (0 << 8) |
-                        (i << 4) | (0);         
+        for(uint8_t i = 0; tail > 0 && i * SIMD_WIDTH < tail; ++i){
+            write_add_block(i);  
         }
         // EXIT
-        printf("AAA\n");
-        crf_start[instr_idx++] = (2 << 28) | (0 << 25) | (0 << 22) | (0 << 19) | (0 << 8) |
-                    (0 << 4) | (0);
-        printf("EXIT\n");                    
+        crf_start[instr_idx++] = CTL_INST(2, 0 , 0);     
+
         // ACTIVATE PIM MODE
         pim_region[0] = 1; // Writing to this address activates PIM mode
+        
         int i = 0, j;
-        printf("BBB\n");
+        int16_t dummy1, dummy2; //For fake memory access
         for(; i < loops; ++i){
-            int16_t dummy1, dummy2;
             for(j = 0; j < regs; ++j){
-                printf("Acceso %d\n", i * regs * 16 + j * 16); 
-                dummy1 = v1[i * regs * 16 + j * 16]; // Read to A's address to trigger the MOV instruction
-                dummy2 = v2[i * regs * 16 + j * 16]; // Read to B's address to trigger the ADD instruction
-                v3[i * regs * 16 + j * 16] = 0; // Write to C's address to trigger the MOV instruction to write back the result
+                dummy1 = v1[i * regs * SIMD_WIDTH + j * SIMD_WIDTH]; // Read to A's address to trigger the MOV instruction
+                dummy2 = v2[i * regs * SIMD_WIDTH + j * SIMD_WIDTH]; // Read to B's address to trigger the ADD instruction
+                v3[i * regs * SIMD_WIDTH + j * SIMD_WIDTH] = 0; // Write to C's address to trigger the MOV instruction to write back the result
             }
             if(loops > 1)
                 v3[0] = 0; // Some memory access to trigger the execution of JUMP
         }
-        for(int k = 0; tail > 0 && k * 16 < tail; ++k){
-            int16_t dummy1, dummy2;
-            dummy1 = v1[(i - 1) * regs * 16 + j * 16]; // Read to A's address to trigger the MOV instruction
-            dummy2 = v2[(i - 1) * regs * 16 + j * 16]; // Read to B's address to trigger the ADD instruction
-            v3[(i - 1) * regs * 16 + j * 16] = 0; // Write to C's address to trigger the MOV instruction to write back the result
+        for(int k = 0; tail > 0 && k * SIMD_WIDTH < tail; ++k){
+            dummy1 = v1[(i - 1) * regs * SIMD_WIDTH + j * SIMD_WIDTH]; // Read to A's address to trigger the MOV instruction
+            dummy2 = v2[(i - 1) * regs * SIMD_WIDTH + j * SIMD_WIDTH]; // Read to B's address to trigger the ADD instruction
+            v3[(i - 1) * regs * SIMD_WIDTH + j * SIMD_WIDTH] = 0; // Write to C's address to trigger the MOV instruction to write back the result
             ++j;
         }
         v3[0] = 0; // Some memory access to trigger the execution of EXIT
@@ -124,5 +113,7 @@ int init_pim(){
         return 1;
     }
     m5_exit(0);
+    crf_start = (uint32_t *)(pim_region + 4); // CRF starts at offset 2 in the PIM region
+
     return 0;
 }
