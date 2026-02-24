@@ -21,3 +21,4 @@ typedef struct{
 int init_pim();
 int init_operand(pim_operand *op, uint8_t rows, uint8_t cols);
 int add(pim_operand a, pim_operand b, pim_operand c);
+int matrix_multiplication(pim_operand a, pim_operand b, pim_operand c);

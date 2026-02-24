@@ -1,7 +1,8 @@
 #include "pim.h"
 
 int8_t *pim_region;
-uint32_t *crf_start;
+uint32_t *crf;
+int16_t *srf_m;
 uint8_t instr_idx = 0;
 
 size_t pim_size = 0x1000000;  // 16 MB
@@ -11,8 +12,8 @@ uint64_t next_addr = 0x20000000;
 int init_operand(pim_operand *op, uint8_t rows, uint8_t cols){ 
     op->rows = rows;
     op->cols = cols;
-    uint8_t elems = rows * cols;
-    uint8_t real_elems = SIMD_WIDTH * (elems / SIMD_WIDTH + (elems % SIMD_WIDTH > 0 ? 1 : 0));
+    uint32_t elems = rows * cols;
+    uint32_t real_elems = SIMD_WIDTH * (elems / SIMD_WIDTH + (elems % SIMD_WIDTH > 0 ? 1 : 0));
     op->vector = mmap(
         (void *)next_addr,  
         real_elems * 2, // 16 bits per element
@@ -33,13 +34,12 @@ int init_operand(pim_operand *op, uint8_t rows, uint8_t cols){
 
 void write_add_block(uint8_t op_idx){
     //MOV GRF_A0, BANK1
-    crf_start[instr_idx++] = DATA_INST(3, 1, 3, 0, op_idx, 0);
+    crf[instr_idx++] = DATA_INST(3, 1, 3, 0, op_idx, 0);
     //ADD GRF_B0, GRF_A0, BANK0
-    crf_start[instr_idx++] = ALU_INST(4, 2, 1, 3, 0, op_idx, op_idx, 0);
+    crf[instr_idx++] = ALU_INST(4, 2, 1, 3, 0, op_idx, op_idx, 0);
     // MOV BANK0, GRF_B0
-    crf_start[instr_idx++] = DATA_INST(3, 3, 2, 0, 0, op_idx);
+    crf[instr_idx++] = DATA_INST(3, 3, 2, 0, 0, op_idx);
 }
-
 
 int add(pim_operand A, pim_operand B, pim_operand C){
         uint64_t elems = A.rows * A.cols;
@@ -66,13 +66,13 @@ int add(pim_operand A, pim_operand B, pim_operand C){
         }
         if(loops > 1){
             // JUMP 3, loops
-            crf_start[instr_idx++] = (1 << 28) | (3 * regs << 11) | (loops - 1);
+            crf[instr_idx++] = (1 << 28) | (3 * regs << 11) | (loops - 1);
         }
         for(uint8_t i = 0; tail > 0 && i * SIMD_WIDTH < tail; ++i){
             write_add_block(i);  
         }
         // EXIT
-        crf_start[instr_idx++] = CTL_INST(2, 0 , 0);     
+        crf[instr_idx++] = CTL_INST(2, 0 , 0);     
 
         // ACTIVATE PIM MODE
         pim_region[0] = 1; // Writing to this address activates PIM mode
@@ -98,6 +98,39 @@ int add(pim_operand A, pim_operand B, pim_operand C){
         return 0;
 }
 
+int matrix_multiplication(pim_operand A, pim_operand B, pim_operand C){
+    if(A.cols != B.rows || C.rows != A.rows || C.cols != B.cols)
+        return 1;
+    uint8_t loops = B.cols / 16;
+    //MOV GRFB, BANK0 
+    crf[instr_idx++] = DATA_INST(3, 2, 3, 0, 0, 0);
+    //MAC GRFB, BANK1, SRFM
+    crf[instr_idx++] = ALU_INST(7, 2, 3, 4, 0, 0, 0, 0);
+    //MOV BANK0 GRFB
+    crf[instr_idx++] = DATA_INST(3, 3, 2, 0, 0, 0);
+    //JUMP 3, loops
+    crf[instr_idx++] = CTL_INST(1, 3, loops - 1);
+    //EXIT
+    crf[instr_idx++] = CTL_INST(2, 0, 0);
+
+    int16_t dummy;
+    for(int i = 0; i < A.cols; ++i){
+        srf_m[0] = A.vector[i];
+        pim_region[0] = 1; // Writing to this address activates PIM mode
+        int j = 0;        
+        do{
+            dummy = C.vector[j]; // Read to C's address
+            dummy = B.vector[i * B.cols + j]; //Read from B
+            C.vector[j] = 0; //Write to B
+            A.vector[0] = 0; // JUMP
+            ++j;
+        }while(j < loops);
+        A.vector[0] = 0; //EXIT
+    }
+
+    return 0;
+}
+
 int init_pim(){
     pim_region = mmap(
         (void *)0x10000000,  
@@ -113,7 +146,7 @@ int init_pim(){
         return 1;
     }
     m5_exit(0);
-    crf_start = (uint32_t *)(pim_region + 4); // CRF starts at offset 2 in the PIM region
-
+    crf = (uint32_t *)(pim_region + 4); 
+    srf_m = (int16_t *)(crf + 32);
     return 0;
 }

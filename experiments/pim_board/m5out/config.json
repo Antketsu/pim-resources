@@ -1417,7 +1417,7 @@
                                 "name": "workload",
                                 "path": "board.processor.cores.core.workload",
                                 "cmd": [
-                                    "/homelocal/antoma19_local/u/tfm/pim-resources/binaries/pim/add_matrix"
+                                    "/homelocal/antoma19_local/u/tfm/pim-resources/binaries/pim/mult_vector_matrix"
                                 ],
                                 "cwd": "/homelocal/antoma19_local/u/tfm/pim-resources/experiments/pim_board",
                                 "drivers": [],
@@ -1426,7 +1426,7 @@
                                 "errout": "cerr",
                                 "euid": 100,
                                 "eventq_index": 0,
-                                "executable": "/homelocal/antoma19_local/u/tfm/pim-resources/binaries/pim/add_matrix",
+                                "executable": "/homelocal/antoma19_local/u/tfm/pim-resources/binaries/pim/mult_vector_matrix",
                                 "gid": 100,
                                 "input": "cin",
                                 "kvmInSE": false,
