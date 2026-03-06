@@ -2,7 +2,7 @@ GEM5_PATH = /homelocal/antoma19_local/u/cnm/gem5/gem5
 ISA = x86
 GXX = gcc
 
-all: add_vectors add_matrix mult_vector_matrix mult_matrix
+all: add_vectors add_matrix mult_vector_matrix mult_matrix add_no_acc add_all_bank
 
 add_vectors: add_vectors.c pim.c pim.h
 	$(GXX) -o add_vectors add_vectors.c pim.c -static -I$(GEM5_PATH)/include -L$(GEM5_PATH)/util/m5/build/$(ISA)/out -lm5
@@ -16,6 +16,10 @@ mult_vector_matrix: mult_vector_matrix.c pim.c pim.h
 mult_matrix: mult_matrix.c pim.c pim.h
 	$(GXX) -o mult_matrix mult_matrix.c pim.c -static -I$(GEM5_PATH)/include -L$(GEM5_PATH)/util/m5/build/$(ISA)/out -lm5
 
+add_no_acc: add_no_acc.c pim.c pim.h
+	$(GXX) -o add_no_acc add_no_acc.c pim.c -static -I$(GEM5_PATH)/include -L$(GEM5_PATH)/util/m5/build/$(ISA)/out -lm5
 
+add_all_bank: add_all_bank.c pim.c pim.h
+	$(GXX) -o add_all_bank add_all_bank.c pim.c -static -I$(GEM5_PATH)/include -L$(GEM5_PATH)/util/m5/build/$(ISA)/out -lm5
 clean:
-	rm -f add_vectors add_matrix mult_vector_matrix mult_matrix
+	rm -f add_vectors add_matrix mult_vector_matrix mult_matrix add_no_acc add_all_bank

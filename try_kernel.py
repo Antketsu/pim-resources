@@ -32,10 +32,10 @@ def exit_handler():
     process.map(0x10000000, 0xC4000000, 0x1000000, False) # PIM region
     print("Mapped memory region at VA 0x10000000 to PA 0xC4000000")
     yield False
-    process.map(0x20000000, 0xD0002000, 0x1000000, False) # Operand A in bank1
+    process.map(0x20000000, 0xD0000000, 0x1000000, False) # Operand A in bank1
     print("Mapped memory region at VA 0x20000000 to PA 0xD0000000")
     yield False
-    process.map(0x30000000, 0xD1000000, 0x1000000, False) # Operand B in bank 0
+    process.map(0x30000000, 0xD1002000, 0x1000000, False) # Operand B in bank 0
     print("Mapped memory region at VA 0x30000000 to PA 0xD1000000")
     yield False
     process.map(0x40000000, 0xD2000000, 0x1000000, False) # Operand C in bank 0
@@ -60,7 +60,7 @@ cache_hierarchy = PrivateL1SharedL2CacheHierarchy(
 # Setup the system memory.
 memory = SingleChannelDDR4_2400(size="3GB")
 
-processor = SimpleProcessor(num_cores=1,isa=ISA.X86,cpu_type=CPUTypes.ATOMIC)
+processor = SimpleProcessor(num_cores=1,isa=ISA.X86,cpu_type=CPUTypes.TIMING)
 
 pim = PIMAccelerator(size="3GB")
 

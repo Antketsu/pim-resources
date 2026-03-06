@@ -5,8 +5,8 @@
 int main(){
     init_pim();
     pim_operand A, B, C;
-    uint8_t rows = 35;
-    uint8_t cols = 16 * 4 + 2;
+    uint8_t rows = 64;
+    uint8_t cols = 64;
     init_operand(&A, rows, cols);
     init_operand(&B, rows, cols);
     init_operand(&C, rows, cols);
@@ -14,7 +14,7 @@ int main(){
     for(int i = 0; i < rows; ++i){
         for (int j = 0; j < cols; j++) {
             A.vector[i * cols + j] = j + i;
-            B.vector[i * cols + j] = 2 * (i + 1) * j;
+            B.vector[i * cols + j] = 2 * (i + j);
         }
     }
 
